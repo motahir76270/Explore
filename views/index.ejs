@@ -1,0 +1,26 @@
+<%- layout('/layouts/boilerplate') -%>
+
+<body>
+
+    <!-- <p class="color-success"> <%= success  %></p> -->
+    <div class="containt  d-flex flex-wrap justify-content-evenly">
+   
+    <% for(let info of infoData){ %>
+      <a href="http://localhost:5670/explore/<%=info._id%>" style="text-decoration:none">
+       <div class="card mt-5 d-flex flex-column" style="width: 18rem;height:20rem">
+      <img src="<%= info.image.url %>" class="card-img-top" alt=" " style="height:14rem">
+      <div class="card d-flex flex-column p-2" style="height: 8rem;">
+        <h5 class="card-text" style="margin-top: 6px;"> <%=info.title %> </h5>
+        <p class="card-text" style="margin-top: 6px;">  <b>Price &#8377; </b> <%=info.price %>/night </p>
+        <div class="d-flex" style="margin-top: -20px;">
+          <p class="d-flex">Location: <%=info.location  %></p> 
+          <p>,<%=info.country  %></p> 
+        </div>
+      </div>
+    </div>
+</a>
+    <% } %>
+
+    </div>
+    
+</body>

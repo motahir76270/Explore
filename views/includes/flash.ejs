@@ -1,0 +1,19 @@
+
+  <%  if(success && success.length){ %>
+    <div class="alert alert-expand-sm  d-flex alert-success position-fixed alert-dismissible fade show"
+    style="width: 70%;height:60px;margin-left:10rem;margin-top:50px;z-index:1111" role="alert">
+      <h3 class="flash_text">  <%= success  %> </h3> 
+        <!-- Close button for dismissing alert -->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% } %>
+
+
+    <%  if(error && error.length){ %>
+        <div class="alert d-flex alert-danger position-fixed alert-dismissible fade show"
+        style="width: 70%;height:60px;margin-left:10rem;margin-top:50px;z-index:1111 " role="alert">
+          <h3 class="flash_text">  <%= error  %> </h3> 
+            <!-- Close button for dismissing alert -->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% } %>

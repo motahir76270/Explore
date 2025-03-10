@@ -1,0 +1,44 @@
+<%- layout('/layouts/boilerplate') -%>
+
+<body>
+
+    <div class="container p-4 my-3 rounded-2" style=" opacity:1;filter:blur(0.3px);">
+    <form method="POST" action="/explore" enctype="multipart/form-data">
+        <div class="mb-3">
+          <input type="text"  name="title" class="form-control bg-transparent" required  placeholder="title" style="height: 50px;">
+        </div>
+        <div class="mb-3">
+          <input type="text" name="description" class="form-control bg-transparent"  placeholder="Description" required>
+        </div>
+        
+        <!-- <div class="mb-3">
+            <input type="text" name="image.url" class="form-control bg-transparent"  placeholder="Image URL or Insert" required>
+        </div> -->
+
+        <div class="mb-3">
+          <input type="file" name="image.url" class="form-control bg-transparent"  placeholder="Image URL or Insert" required>
+      </div>
+       
+         
+        <div class="mb-3 d-flex gap-5">
+           <div> <input type="number" name="price" class="form-control  bg-transparent text" placeholder="price" required style="color: black !important;height:50px;">
+            </div>
+            <div>
+                   <input type="text" name="country" class="form-control bg-transparent"  placeholder="Country Name" required style="height: 50px;">
+                    <div class="valid-feedback"> Correct</div>
+            </div>
+       </div>
+          <div class="mb-3">
+              <input type="text" name="location" class="form-control bg-transparent input-text-dark"  placeholder="Enter location" required style="height:40px">
+          </div>
+        
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+          <label class="form-check-label" for="exampleCheck1" >Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width: 130px; margin-top:20px">ADD</button>
+      </form>
+
+    </div>
+    
+</body>

@@ -1,0 +1,95 @@
+<%- layout('/layouts/boilerplate') -%>
+
+<body>
+     <div class="listmodel p-1 d-flex flex-column" style="margin-left:100px;" >
+            <div id="cardShow" class="card  mt-1 " style="width:52rem; height:34rem;">
+                  <img src="<%=listing.image.url%> " class="card-img-top rounded-2 " style="width: 52rem;height:20rem">
+                <div class="card-body">
+                      <h2 class="card-text"> <%=listing.title %> </h1>
+                     
+                      <b> <i> Owner: <%=listing.owner[0].username  %> </i></b>
+                      
+                      <p> <%=listing.description %> </p>
+                    <h6>Price: &#8377;  <%= listing.price.toLocaleString('en-IN')  %></h6>
+
+                    <ul type="none" style="margin-left: -32px;display:flex;">
+                    <li>Location: <%= listing.location %> </li> &nbsp;
+                    <li>, <%= listing.country %> </li>     
+                    </ul>
+                 </div>
+             </div> 
+
+       <% if(cuurentuser && cuurentuser._id.equals(listing.owner[0]._id) ) { %>
+            <div id="edit-del" style="display: flex ;gap:2rem;width:25rem;height:4rem; margin-top:20px;padding:10px;">
+              <a href="http://localhost:5670/explore/<%=listing._id  %>/edit" class="rounded-3 " style="text-decoration: none;color:black;background-color:red;width:7rem;height:37px;padding:6px;"> &nbsp;  &nbsp;  &nbsp;  &nbsp; Edit </a>
+                  <form method="POST" action="/explore/<%=listing._id  %>?_method=DELETE">
+                  <button type="submit" class="bg-dark rounded-3 border border-none" style="width: 7rem;height:38px;color:aliceblue">Delete</button>
+                  </form>
+             </div>
+        <% } %>
+
+
+        <hr>
+
+        <% if(cuurentuser)  { %>
+        <div>
+          <form method="post" action="/explore/<%=listing._id %>/reviews">
+            <h1>Leave Rating</h1>
+            <!-- <div class="">
+                   <label  for="rating" style="color: aliceblue;">Rating</label>
+                    <input type="range" min="1" max="5" name="rating" style="width: 100%;" >
+            </div> -->
+
+            
+            <div class="star-icon">
+              <input type="radio"  id="rating1" name="rating" value="1">
+              <label for="rating1"  > <i class="fa fa-star" aria-hidden="true"></i> </label>
+      
+              <input type="radio" id="rating2" name="rating" value="2">
+              <label for="rating2"  > <i class="fa fa-star" aria-hidden="true"></i> </label>
+      
+              <input type="radio" id="rating3" name="rating" value="3">
+              <label for="rating3" > <i class="fa fa-star" aria-hidden="true"></i> </label>
+      
+              <input type="radio" id="rating4" name="rating" value="4">
+              <label for="rating4" > <i class="fa fa-star" aria-hidden="true"></i> </label>
+      
+              <input type="radio" id="rating5" name="rating" value="5">
+              <label for="rating5" >  <i class="fa fa-star" aria-hidden="true"></i> </label>
+          </div>
+
+
+
+               <textarea class="border-1.5 border border-dark" id="comment" name="comment" rows="5" cols="40" placeholder="comment" required></textarea>
+               <button class="btn bg-success border reviewbtn runded-3 m" type="submit" style="width:180px;height:50px; margin-top:-40px;margin-left: 10px;">Submit</button>
+    
+          </form>
+        </div>
+        <% } %>
+        
+        <hr>
+        <h2>All Reviews</h2>
+        <div class="d-flex flex-wrap gap-5">
+          <% for(let reviews of listing.reviews){ %>
+            <div class="card p-4 col-5  bg-info
+            ">
+              <p> <b> @<%= reviews.author.username %> </b> </p>
+               <p>Rating: <%= reviews.rating %> </p>
+               <p>comment: <%=reviews.comment%> </p>
+               <p>Posted At: <%=reviews.createAt %></p>
+
+               <p class="starability-result" data-rating="<%= reviews.rating  %>"> </p>
+            
+               <% if(cuurentuser && cuurentuser._id.equals(listing.owner[0]._id) ) { %>
+               <form method="post" action="/explore/<%=listing._id%>/reviews/<%=reviews._id%>/?_method=DELETE">
+                    <button class="btn btn-dark">Delete</button>
+               </form>
+              <% } %>
+
+            </div>
+          <% } %>
+        </div>
+
+     </div>
+
+</body>

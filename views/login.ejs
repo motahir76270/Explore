@@ -1,0 +1,16 @@
+<%- layout('/layouts/boilerplate') -%>
+   <div>
+    <h2>Explore Signup </h2>
+    <form method="post" action="/login">
+       
+        <div class="mb-3">
+            <input type="text" name="username" class="form-control bg-transparent" placeholder="username or email"  required style="height: 50px;">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="password" class="form-control bg-transparent" placeholder="password"  required style="height: 50px;">
+        </div>
+
+        <button type="submit" class="btn btn-success" style="width: 130px; margin-top:20px">Login</button>
+
+    </form>
+   </div>

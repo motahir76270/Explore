@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    background-image: linear-gradient(pink,blue);
+    opacity: 0.8;
+}
+
+.logo{
+    width: 35px;
+    border-radius: 20px;
+}
+.campass{
+    font-size: 40px;
+}
+.fa-compass{
+    font-family: 50px;
+    font-size: 80px;
+    font-weight: 50px;
+    color: red;
+}
+
+.nav-item{
+    margin-left: 40px;
+    font-size: 22px;
+    filter: brightness(50%) !important;
+}
+
+.footer{
+  /* background-color: gray; */
+  background-image: linear-gradient(rgb(139, 113, 117),blue);
+  width: 100%;
+  height: 50px;
+}
+.terms{
+    margin-left: 40px !important;
+}
+.terms a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+.social-icon{
+    display: flex;
+    gap: 40px;
+    margin-left: 100px;
+    font-size: 30px;
+}
+.fa-twitter-square{
+    color: black;
+}
+.rights{
+    margin-left: 220px;
+    margin-top: 26px;
+    color: white;
+}
+
+@media(max-width:564px) {
+
+    .explore{
+        font-size: 35px;
+        margin-top: 8px !important;
+        margin-left: -90px !important;
+    }
+    .alert{
+        width: 20rem ! important;
+        height: 50px ! important;
+        margin-left: 20px !important;    
+    }
+    .flash_text{
+        font-size: 13px !important;
+    }
+    body{
+        overflow-x: hidden;
+    }
+
+    .footer{
+        width: 560px !important;
+        height: 50px !important;
+        justify-content: space-between;
+    }
+    .terms{
+        display: flex;
+        width: 160px;
+        padding: 2px !important;
+        gap: 2px !important;
+    }
+    .terms a{
+      font-size: 10px !important;
+      margin-top: 1px !important;
+      margin-left: 1px !important;
+    }
+
+    .social-icon {
+        position: absolute;
+        margin-top: 5px !important;
+        margin-left: 320px !important;
+        font-size: 24px !important;
+        gap: 4px !important;
+    }
+    .rights{
+        position: fixed !important;
+        margin-left: 405px !important;
+        margin-top: 36px !important;
+        font-size: 12px !important;
+    }
+ 
+
+    #cardShow{
+        width: 450px !important;
+        margin-left: -50px !important;
+      
+        
+    }
+    #cardShow img{
+        width: 450px !important;
+    }
+    .card-text{
+        font-size: 15px !important;
+        margin-top: 10px !important;
+    }
+    .container{
+        margin-left: -10px !important;
+    }
+    .listmodel{
+        display: flex !important;
+        justify-content: center;
+    }
+    #edit-del{
+        margin-left: 0px;
+    }
+
+    #comment{
+        margin-left: -20px !important;
+        width: 280px;
+    }
+    .reviewbtn{
+        position: relative;
+        margin-top: 50px !important;
+    }
+ 
+}
+
+
+#comment{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: inherit;
+    color:rgb(202, 192, 192);
+    margin-left: 5px;
+}
