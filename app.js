@@ -109,6 +109,7 @@ app.use((req,res,next) => {
 
 app.get('/', (req, res) => 
   res.redirect('/explore')
+//heloo
 );
 
 //reconstructing explore routes
