@@ -36,7 +36,7 @@ const { console } = require('inspector');
 
 const db_url = process.env.ATLASDB_URL ;
 
-const port = process.env.PORT || 5670;
+const port = process.env.port;
 //sudo lsof -t -i :2770 | xargs sudo kill -9
 //sudo kill -9 $(sudo lsof -t -i:5670)   //kill automatically
 
